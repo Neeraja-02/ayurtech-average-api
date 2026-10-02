@@ -1,0 +1,21 @@
+{
+  "name": "ayurtech-average-api",
+  "version": "1.0.0",
+  "description": "Simple REST API for calculating average",
+  "main": "src/server.js",
+  "scripts": {
+    "start": "node src/server.js",
+    "test": "jest --runInBand",
+    "prepare": "husky"
+  },
+  "dependencies": {
+    "express": "^5.1.0"
+  },
+  "devDependencies": {
+    "jest": "^30.0.0",
+    "supertest": "^7.1.4",
+    "husky": "^9.1.7",
+    "@commitlint/cli": "^20.0.0",
+    "@commitlint/config-conventional": "^20.0.0"
+  }
+}
