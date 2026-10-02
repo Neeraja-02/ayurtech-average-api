@@ -20,19 +20,19 @@ all valid numbers received by the server so far.
 
 The project provides one API endpoint:
 
-```text
+
 POST /average
-```
+
 
 The API accepts a number in the request body.
 
 For example:
 
-```json
+
 {
   "number": 10
 }
-```
+
 
 The server stores the number and calculates the average of all numbers
 received so far.
@@ -41,57 +41,57 @@ For example:
 
 First request:
 
-```json
+
 {
   "number": 10
 }
-```
+
 
 Response:
 
-```json
+
 {
   "average": 10
 }
-```
+
 
 Second request:
 
-```json
+
 {
   "number": 20
 }
-```
+
 
 Response:
 
-```json
+
 {
   "average": 15
 }
-```
+
 
 Third request:
 
-```json
+
 {
   "number": 30
 }
-```
+
 
 Response:
 
-```json
+
 {
   "average": 20
 }
-```
+
 
 The calculation is:
 
-```text
+
 (10 + 20 + 30) / 3 = 20
-```
+
 
 ---
 
@@ -118,7 +118,7 @@ Before running the project, make sure the following are installed:
 
 ## Project Structure
 
-```text
+
 ayurtech-average-api/
 │
 ├── src/
@@ -137,7 +137,7 @@ ayurtech-average-api/
 ├── package.json
 ├── package-lock.json
 └── README.md
-```
+
 
 ---
 
@@ -145,9 +145,9 @@ ayurtech-average-api/
 
 After downloading or cloning the project, install the required packages:
 
-```bash
+
 npm install
-```
+
 
 The required packages are already listed in `package.json`.
 
@@ -157,15 +157,15 @@ The required packages are already listed in `package.json`.
 
 Start the server using:
 
-```bash
+
 npm start
-```
+
 
 The server will start on:
 
-```text
+
 http://localhost:3000
-```
+
 
 ---
 
@@ -178,15 +178,15 @@ received by the server so far.
 
 ### Request URL
 
-```text
+
 http://localhost:3000/average
-```
+
 
 ### Method
 
-```text
+
 POST
-```
+
 
 ### Request Body
 
@@ -194,19 +194,18 @@ The request body should contain a number.
 
 Example:
 
-```json
+
 {
   "number": 10
 }
-```
+
 
 ### Response
 
-```json
+
 {
   "average": 10
 }
-```
 
 ---
 
@@ -214,26 +213,26 @@ Example:
 
 Suppose the following numbers are sent to the API:
 
-```text
+
 10
 20
 30
 40
-```
+
 
 After receiving all four numbers, the API returns:
 
-```json
+ 
 {
   "average": 25
 }
-```
+
 
 Because:
 
-```text
+
 (10 + 20 + 30 + 40) / 4 = 25
-```
+
 
 ---
 
@@ -249,35 +248,35 @@ Open Postman.
 
 Select:
 
-```text
+
 POST
-```
+
 
 ### Step 3
 
 Enter:
 
-```text
+
 http://localhost:3000/average
-```
+
 
 ### Step 4
 
 Go to:
 
-```text
+
 Body → raw → JSON
-```
+
 
 ### Step 5
 
 Enter:
 
-```json
+ 
 {
   "number": 10
 }
-```
+
 
 ### Step 6
 
@@ -285,27 +284,27 @@ Click **Send**.
 
 The response will be:
 
-```json
+ 
 {
   "average": 10
 }
-```
+
 
 Now send another request:
 
-```json
+ 
 {
   "number": 20
 }
-```
+
 
 The response will be:
 
-```json
+ 
 {
   "average": 15
 }
-```
+
 
 ---
 
@@ -315,31 +314,31 @@ The API can also be tested using CURL.
 
 Example:
 
-```bash
+
 curl -X POST http://localhost:3000/average -H "Content-Type: application/json" -d "{\"number\":10}"
-```
+
 
 Response:
 
-```json
+ 
 {
   "average": 10
 }
-```
+
 
 Send another number:
 
-```bash
+
 curl -X POST http://localhost:3000/average -H "Content-Type: application/json" -d "{\"number\":20}"
-```
+
 
 Response:
 
-```json
+ 
 {
   "average": 15
 }
-```
+
 
 ---
 
@@ -349,25 +348,25 @@ The API checks whether the request contains a valid number.
 
 For example:
 
-```json
+ 
 {
   "number": "hello"
 }
-```
+
 
 The API returns:
 
-```json
+ 
 {
   "error": "Please provide a valid number"
 }
-```
+
 
 An empty request such as:
 
-```json
+ 
 {}
-```
+
 
 will also return an error.
 
@@ -388,9 +387,9 @@ The tests check:
 
 The tests can be run using:
 
-```bash
+
 npm test
-```
+
 
 ---
 
@@ -406,12 +405,12 @@ They explain:
 
 Example:
 
-```javascript
+
 /**
  * Calculate average of all numbers.
  * @returns {number}
  */
-```
+
 
 ---
 
@@ -425,9 +424,9 @@ The project contains two Git hooks.
 
 Before a commit is created, the project automatically runs the test cases.
 
-```text
+
 npm test
-```
+
 
 This helps make sure that the code is working before it is committed.
 
@@ -445,36 +444,36 @@ This project uses the Conventional Commits format.
 
 Examples of valid commit messages:
 
-```text
+
 feat: add average API
-```
 
-```text
+
+
 fix: validate number input
-```
 
-```text
+
+
 test: add average test cases
-```
 
-```text
+
+
 docs: update README
-```
 
-```text
+
+
 refactor: improve average calculation
-```
+
 
 Common commit types used in this project are:
 
-```text
+
 feat      New feature
 fix       Bug fix
 test      Test changes
 docs      Documentation changes
 refactor  Code changes without changing functionality
 chore     Maintenance changes
-```
+
 
 ---
 
@@ -482,7 +481,7 @@ chore     Maintenance changes
 
 The API works in a simple way.
 
-```text
+
 Client
   |
   | POST /average
@@ -499,17 +498,17 @@ Calculate Average
   |
   v
 Return Response
-```
+
 
 For example:
 
-```text
+
 Request 1 → 10 → Average = 10
 
 Request 2 → 20 → Average = 15
 
 Request 3 → 30 → Average = 20
-```
+
 
 ---
 
