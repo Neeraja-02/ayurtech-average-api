@@ -561,6 +561,8 @@ Contains files and folders that should not be uploaded to GitHub.
 
 ---
 
+---
+
 ## GitHub Repository
 
 The source code for this project is available in the public GitHub
@@ -568,9 +570,7 @@ repository.
 
 Repository:
 
-```text
-YOUR_GITHUB_REPOSITORY_URL
-```
+https://github.com/Neeraja-02/ayurtech-average-api
 
 ---
 
